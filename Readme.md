@@ -59,32 +59,6 @@ App → patched dylib → attacker server → AES decrypt → log & analyze → 
 
 ---
 
-### [`mexico-2QR`](https://github.com/lequocthangg/mexico-2QR) · INE Multi-Part QR Decoder
-
-> Reverse engineered cryptographic pipeline of a real-world identity card system (Mexico INE) that splits data across 2 QR codes.
-
-```
-[QR1.png] + [QR2.png]
-    │
-    ├─ QR Extraction     → zxing-cpp (primary) / pyzbar / OpenCV (fallback)
-    ├─ Segment Merge     → [2-byte index] + payload → sorted + concatenated
-    ├─ RSA Stage 1       → Public decrypt → part B
-    ├─ RSA Stage 2       → Merge A+B → full block decrypt
-    ├─ ECC Verify        → secp256r1, SHA-256, r‖s (64-byte sig)
-    ├─ Bit Unpack        → 6-bit packed stream → binary reconstruction
-    └─ WEBP Rebuild      → Inject 23 constant bytes → valid RIFF/WEBP output
-```
-
-| Script | Purpose |
-|---|---|
-| `decode_1img.py` | Single-image multi-QR extraction with fallback chain |
-| `gIMG.py` | Full pipeline → extract embedded WEBP image |
-| `gTxt.py` | Full pipeline → extract text payload |
-
-**Tools:** `Ghidra` `Burp Suite` `Python` `zxing-cpp` `OpenCV` `pyzbar` `RSA` `ECC P-256` `SHA-256` `PIL`
-
----
-
 ### [`VcamAndroid`](https://github.com/lequocthangg/VcamAndroid) · Android Native Library Wrapper
 
 > Kotlin Android app wrapping 3 low-level ARM64 binaries to inject a virtual camera hook into `cameraserver` via SU shell.
@@ -183,7 +157,6 @@ Detection algorithm:
 | Repository | Commits | Domain |
 |---|---|---|
 | `Vcamlos` | 8 | iOS binary patching & server emulation |
-| `mexico-2QR` | 6 | Cryptographic QR pipeline (RSA + ECC) |
 | `DetectVcam` | 6 | Anti-spoofing detection (CameraX diff) |
 | `VcamAndroid` | 2 | Android native .so hook injection |
 
