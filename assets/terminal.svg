@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 322" width="760" height="322" fill="none" role="img" aria-label="whoami terminal">
+  <defs>
+    <linearGradient id="tbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1016"/><stop offset="1" stop-color="#070b10"/>
+    </linearGradient>
+    <style>
+      .m{font-family:'DejaVu Sans Mono','JetBrains Mono','Fira Code',Consolas,monospace;font-size:15px}
+      .g{fill:#4ade80}.c{fill:#00e0ff}.y{fill:#fde047}.w{fill:#d6e2ee}.d{fill:#6b7280}.p{fill:#f472b6}.o{fill:#fb923c}
+      /* base: every row is always visible — motion only enhances */
+      @keyframes bk{0%,49%{opacity:1}50%,100%{opacity:0}}
+      @media (prefers-reduced-motion: no-preference){
+        .cur{animation:bk 1s step-end infinite}
+      }
+    </style>
+  </defs>
+
+  <!-- window -->
+  <rect x="2" y="2" width="756" height="318" rx="12" fill="url(#tbg)" stroke="#1f2a37" stroke-width="1.5"/>
+  <rect x="2" y="2" width="756" height="36" rx="12" fill="#0e151d"/>
+  <rect x="2" y="24" width="756" height="14" fill="#0e151d"/>
+  <circle cx="26" cy="20" r="6" fill="#ff5f57"/><circle cx="48" cy="20" r="6" fill="#febc2e"/><circle cx="70" cy="20" r="6" fill="#28c840"/>
+  <text class="m d" x="380" y="25" text-anchor="middle" font-size="13">thang@research — zsh — 80×24</text>
+
+  <g transform="translate(24,66)">
+    <text class="m"><tspan class="g">thang@research</tspan><tspan class="d">:</tspan><tspan class="c">~</tspan><tspan class="d">$</tspan><tspan class="w"> whoami --research</tspan></text>
+
+    <text class="m" y="30"><tspan class="o">▌</tspan><tspan class="w"> name   </tspan><tspan class="d">:</tspan><tspan class="g"> lequocthangg</tspan></text>
+    <text class="m" y="52"><tspan class="o">▌</tspan><tspan class="w"> born   </tspan><tspan class="d">:</tspan><tspan class="y"> 2006</tspan></text>
+    <text class="m" y="74"><tspan class="o">▌</tspan><tspan class="w"> focus  </tspan><tspan class="d">:</tspan><tspan class="c"> mobile RE · eKYC &amp; liveness testing · device integrity</tspan></text>
+
+    <text class="m" y="106"><tspan class="g">thang@research</tspan><tspan class="d">:</tspan><tspan class="c">~</tspan><tspan class="d">$</tspan><tspan class="w"> cat ./rules_of_engagement.txt</tspan></text>
+    <text class="m" y="130"><tspan class="p">→</tspan><tspan class="w"> only devices, apps &amp; models I own or am authorized to test</tspan></text>
+    <text class="m" y="152"><tspan class="p">→</tspan><tspan class="w"> eKYC / liveness</tspan><tspan class="d"> : self-hosted models or sandboxes w/ written consent</tspan></text>
+    <text class="m" y="174"><tspan class="p">→</tspan><tspan class="w"> never real identities, live accounts, or real funds</tspan></text>
+    <text class="m" y="196"><tspan class="p">→</tspan><tspan class="w"> findings go to defenders</tspan><tspan class="d"> · coordinated disclosure</tspan></text>
+
+    <text class="m" y="236"><tspan class="g">thang@research</tspan><tspan class="d">:</tspan><tspan class="c">~</tspan><tspan class="d">$</tspan><tspan class="cur g" dx="8">▊</tspan></text>
+  </g>
+</svg>
